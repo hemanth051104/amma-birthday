@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday My Queen Amma 👑</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+html, body {
+  margin: 0;
+  background: #000;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== STAR CANVAS ===== */
+#canvas { position: fixed; inset: 0; z-index:0; }
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.moon {
+  position:absolute;
+  top:10%;
+  right:12%;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background: radial-gradient(circle, #fff, #ffeaa7);
+  box-shadow: 0 0 60px gold, 0 0 120px gold;
+  animation: moonPulse 4s infinite alternate;
+}
+
+@keyframes moonPulse{
+ from{ box-shadow:0 0 40px gold; }
+ to{ box-shadow:0 0 100px #fff3b0; }
+}
+
+.title {
+  font-family: 'Righteous', cursive;
+  font-size: 34px;
+  text-shadow: 0 0 15px gold,0 0 25px white;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  background: linear-gradient(45deg, gold, orange);
+  color: #000;
+  cursor: pointer;
+  font-weight:bold;
+}
+
+/* ===== STORY SECTION ===== */
+.slider-box {
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  z-index:2;
+  padding: 40px 20px;
+}
+
+h2{
+  color: gold;
+  margin-bottom: 10px;
+}
+
+#caption{
+  margin-bottom:20px;
+  font-size:16px;
+  color:#f5e6c8;
+}
+
+#slideImg {
+  width: 320px;
+  border-radius: 18px;
+  box-shadow: 0 0 25px gold;
+  transition: opacity .4s ease;
+}
+
+/* ===== NAV BUTTONS ===== */
+.nav-wrapper {
+  display:flex;
+  gap:20px;
+  margin-top:25px;
+}
+
+.nav {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(45deg, gold, orange);
+  color: #000;
+  cursor: pointer;
+  font-weight:bold;
+}
+
+/* ===== FLOATING BLESSINGS ===== */
+.float-word{
+  position:fixed;
+  bottom:-20px;
+  font-size:14px;
+  color:gold;
+  animation:floatUp 6s linear forwards;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
+
+.special-message{
+  margin-top:40px;
+  max-width:700px;
+  line-height:1.8;
+  font-size:17px;
+  color:#f5e6c8;
+  background: rgba(255,215,0,0.08);
+  padding:25px;
+  border-radius:20px;
+  box-shadow: 0 0 20px rgba(255,215,0,0.4);
+  text-align:center;
+}
+
+.telugu-wish{
+  font-size: 26px;
+  margin-top: 10px;
+  color: #ffd700;
+  text-shadow: 0 0 10px gold, 0 0 20px orange;
+  animation: glowText 2s infinite alternate;
+  font-weight: bold;
+}
+
+@keyframes glowText{
+  from { opacity: 0.8; }
+  to { opacity: 1; text-shadow: 0 0 20px #fff, 0 0 30px gold; }
+}
+
+.telugu-wish{
+  font-size: 26px;
+  margin-top: 10px;
+  color: #ffd700;
+  font-weight: bold;
+  position: relative;
+}
+
+.crown{
+  display: inline-block;
+  margin-left: 8px;
+  animation: crownFloat 2s ease-in-out infinite;
+}
+
+@keyframes crownFloat{
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(8deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<section class="hero">
+  <div class="moon"></div>
+  <div class="title">Happy Birthday My Queen Sangeetha 👑</div>
+ 
+  <div class="telugu-wish">
+  పుట్టిన రోజు శుభాకాంక్షలు అమ్మ! 💛
+  <span class="crown">👑</span>
+</div>
+
+  <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
+    Open Amma’s Memories 💛
+  </button>
+</section>
+
+<section id="story" class="slider-box">
+
+<h2>Our Beautiful Memories 📸</h2>
+<div id="caption">The woman who shaped my life 💛</div>
+
+<div style="position:relative">
+  <img id="slideImg" src="images/mom.jpeg">
+</div>
+
+<div class="nav-wrapper">
+  <button class="nav" onclick="prevImg()">❮ Previous</button>
+  <button class="nav" onclick="nextImg()">Next ❯</button>
+</div>
+
+<div class="special-message">
+  You are not just my mother - you are my strength, my blessing, and my guiding light. 
+  Every sacrifice you made shaped my future. 
+  Every prayer you whispered protects me even today.
+  <br><br>
+  In this kingdom called our home, you are the true Queen 👑✨
+  <br><br>
+  Forever your Kanna 💛
+</div>
+
+
+</section>
+
+<script>
+
+/* ===== STAR BACKGROUND ===== */
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+function resize(){
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+addEventListener("resize", resize);
+
+const stars = Array.from({length:150}, () => ({
+  x: Math.random()*canvas.width,
+  y: Math.random()*canvas.height,
+  r: Math.random()*1.5
+}));
+
+function render(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  stars.forEach(s=>{
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle="white";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(render);
+}
+render();
+
+/* ===== FLOATING BLESSINGS ===== */
+function floatWords(){
+ const words=["Amma 💛","My Queen 👑","Kanna","Blessings ✨"];
+
+ setInterval(()=>{
+  const w=document.createElement("div");
+  w.className="float-word";
+  w.innerHTML=words[Math.floor(Math.random()*words.length)];
+  w.style.left=Math.random()*100+"vw";
+  document.body.appendChild(w);
+  setTimeout(()=>w.remove(),6000);
+ },500);
+}
+floatWords();
+
+/* ===== SLIDER ===== */
+const images=[
+  {src:"images/memory1.jpeg",text:"You are my strength and my world 💛"},
+  {src:"images/memory2.jpeg",text:"Every sacrifice you made built my future 👑"},
+  {src:"images/memory3.jpeg",text:"Your prayers protect me every day 🙏"},
+  {src:"images/memory4.jpeg",text:"Home feels complete because of you ✨"},
+  {src:"images/memory5.jpeg",text:"Forever your Kanna ❤️"},
+  {src:"images/mom.jpeg",text:"In this kingdom called our home, you are the true Queen 👑"}
+];
+
+let index=0;
+
+function show(){
+ const img=document.getElementById("slideImg");
+ img.style.opacity=0;
+
+ setTimeout(()=>{
+   img.src=images[index].src;
+   document.getElementById("caption").innerText=images[index].text;
+   img.style.opacity=1;
+ },300);
+}
+
+function nextImg(){
+ index=(index+1)%images.length;
+ show();
+}
+
+function prevImg(){
+ index=(index-1+images.length)%images.length;
+ show();
+}
+
+
+</script>
+
+</body>
+</html>
